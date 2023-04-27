@@ -77,6 +77,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .title-section{
+    color: #fff;
+    display: none;
+  }
   &-media{
     width: 50%;
     img{
@@ -213,6 +217,11 @@
     margin: 0 auto;
     position: relative;
     max-width: 550px;
+    video{
+      width: 551px;
+      height: 723px;
+      object-fit: cover;
+    }
   }
   .video-button{
     position: absolute;
@@ -566,7 +575,8 @@
   &-name{
     position: relative;
     text-align: center;
-    width: 451px;
+    max-width: 451px;
+    width: 100%;
     padding-top: 30px;
     margin: 0 auto 20px;
     font-weight: 700;
@@ -656,7 +666,6 @@
   .slick-track{
     display: flex;
     align-items: stretch;
-    margin: 0 -12px;
   }
   .slide{
     padding: 0 12px;
