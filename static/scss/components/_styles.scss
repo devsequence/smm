@@ -1,0 +1,364 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $black;
+  font-family: $Gilroy;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: hidden;
+}
+.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+@media (min-width:992px){.container{max-width:960px;padding-left: 10px;padding-right: 10px;}}@media (min-width:1200px){.container{max-width:1116px}}
+h1, h2, h3, h4, h5, h6{
+  font-family: $Gilroy;
+}
+h1 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 78px;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 42px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+img {
+  display: block;
+  //width: 100%;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+section {
+  position: relative;
+  padding: 40px 0;
+  z-index: 1;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.row.min {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.row.min > div[class^="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.overflow {
+  overflow: hidden !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+span,
+.icon {
+  transition: all 150ms ease;
+}
+button{
+  cursor: pointer;
+}
+.wysiwyg{
+  font-size: 16px;
+  line-height: 24px;
+  color: $default;
+  p{
+    font-size: 16px;
+    line-height: 24px;
+    color: $default;
+    margin-bottom: 16px;
+  }
+}
+.title-section{
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 78px;
+  text-align: center;
+}
+.btn-secondary, .btn-primary, .btn-white{
+  font-family: $Gilroy;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 16px 18px;
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 200px;
+  border: 1px solid transparent;
+  transition: all ease 300ms;
+}
+.btn-secondary{
+  background: #3C3030;
+  border-color: #3C3030;
+  color: #FFFFFF;
+  &:hover{
+    background: transparent;
+    border-color: #3C3030;
+    color: #3C3030;
+  }
+}
+.btn-primary{
+  color: #2F2D30;
+  border: 1px solid #2F2D30;
+  background: #fff;
+  &:hover{
+    background: #2F2D30;
+    border-color: #3C3030;
+    color: #FFF;
+  }
+}
+.btn-white{
+  color: #EFEEEA;
+  border: 1px solid #EFEEEA;
+  background: transparent;
+}
+input, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input{
+  display: inline-block;
+  font-family: $Gilroy;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: $default;
+  padding: 15px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  text-overflow: ellipsis;
+  outline: none;
+  //&::-webkit-input-placeholder {
+  //  color: $gray;
+  //  opacity: 1;
+  //}
+  //&::-moz-placeholder {
+  //  color: $gray;
+  //  opacity: 1;
+  //}
+  //&:-moz-placeholder {
+  //  color: $gray;
+  //  opacity: 1;
+  //}
+  //&::-ms-input-placeholder {
+  //  color: $gray;
+  //  opacity: 1;
+  //}
+  //&:-ms-input-placeholder {
+  //  color: $gray;
+  //  opacity: 1;
+  //}
+  //&:focus,
+  //&:active {
+  //  border-color: $default;
+  //}
+  //// invalid
+  //&:invalid {
+  //  box-shadow: none;
+  //}
+  //&:-moz-submit-invalid {
+  //  box-shadow: none;
+  //}
+  //&:-moz-ui-invalid {
+  //  box-shadow: none;
+  //}
+}
+.tab-item{
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  margin-top: 50px;
+  opacity: 0;
+  transition: margin-top 0.7s ease, opacity 0.4s ease;
+  &.active{
+    visibility: visible;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1210px;
+  background: #181818;
+  transition: all ease 150ms;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+
+  &.active{
+    z-index: 9;
+    visibility: visible;
+    opacity: 1;
+    top: 125px;
+    max-height: 550px;
+    height: calc(100% - 125px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+      background: #242424;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #E96735;
+      outline: 1px solid #E96735;
+    }
+  }
+  &-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    padding: 39px 35px 0;
+  }
+  &-item{
+    width: calc(33.3333% - 40px);
+    margin: 0 20px 30px;
+    &__media{
+      margin-bottom: 18px;
+    }
+    &__title{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      color: $default;
+      margin-bottom: 1px;
+    }
+    &__desc{
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 28px;
+      color: #FFFFFF;
+      span{
+        margin-top: 5px;
+        display: block;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 22px;
+        color: #FFFFFF;
+        opacity: 0.6;
+      }
+    }
+  }
+  &-bottom{
+    padding: 31px 35px 34px;
+    position: relative;
+    display: flex;
+    &:before{
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background: #252525;
+      width: calc( 100% - 45px);
+      height: 1px;
+    }
+    &__title{
+      max-width: 160px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 26px;
+      color: #E96735;
+    }
+    &__list{
+      li{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        color: #fff;
+      }
+      span{
+        width: 75px;
+        display: inline-block;
+      }
+      a{
+        display: inline-block;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        color: #FFFFFF;
+        &:hover{
+          color: #E96735;
+        }
+      }
+    }
+  }
+}
