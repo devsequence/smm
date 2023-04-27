@@ -62,15 +62,43 @@ $(".speakers-slider").slick({
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 2,
-    prevArrow: $('.speakers-slider-prev'),
-    nextArrow: $('.speakers-slider-next')
+    prevArrow: $('.speakers-slider-nav .prev'),
+    nextArrow: $('.speakers-slider-nav .next')
 });
-$('.header-logo a, .footer-logo a').on('click', function (e) {
+$(".reviews-slider").slick({
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    prevArrow: $('.reviews-slider-nav .prev'),
+    nextArrow: $('.reviews-slider-nav .next')
+});
+$(".price-slider").slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: $('.price-slider .prev'),
+    nextArrow: $('.price-slider .next'),
+    responsive: [
+        {
+            breakpoint: 1920,
+            settings: {
+
+            }
+        },
+    ]
+});
+$('.header-logo a, .footer-logo a, .to-top').on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({
         scrollTop: 0
     }, 1000);
     return false;
+});
+$('.step-item__title').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.next().slideToggle();
+    $this.parent().toggleClass('open');
 });
 
 if($('.hero').length > 0){
@@ -80,8 +108,14 @@ if($('.hero').length > 0){
         if ($this.scrollTop() > 1) {
             $header.addClass('scroll-nav');
         }
+
         else{
             $header.removeClass('scroll-nav');
+        }
+        if ($this.scrollTop() > 780) {
+            $('.to-top').addClass('active');
+        }else{
+            $('.to-top').removeClass('active');
         }
     });
     $('.header-nav a, .footer-nav a, .btn-scroll').on('click', function (e) {
