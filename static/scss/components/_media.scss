@@ -290,6 +290,9 @@
     &-button{
         grid-column-gap: 20px;
     }
+    &-wrap{
+      justify-content: center;
+    }
   }
   .author-item{
     width: calc(50% - 30px);
