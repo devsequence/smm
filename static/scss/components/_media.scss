@@ -159,12 +159,42 @@
           line-height: 24px;
         }
       }
+      .header-social{
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+        top: 435px;
+      }
     }
     &-logo{
       a{
         font-weight: 700;
         font-size: 24px;
         line-height: 29px;
+      }
+    }
+    &-social{
+      transition: all ease 200ms;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      position: absolute;
+      top: 420px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      ul{
+        display: flex;
+      }
+      li{
+        width: 40px;
+        height: 40px;
+        margin: 0 4px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     &-nav{
