@@ -333,6 +333,9 @@ input {
 .page-content {
   padding-top: 84px; }
 
+.header-social {
+  display: none; }
+
 .footer {
   background: #2F2D30; }
   .footer .container {
@@ -881,8 +884,10 @@ input {
       color: #FFFFFF;
       padding: 20px 25px;
       display: none; }
-    .step-item.open .btn-accordion:after {
-      opacity: 0; }
+    .step-item.open {
+      height: auto; }
+      .step-item.open .btn-accordion:after {
+        opacity: 0; }
 
 .speakers {
   padding: 82px 0 146px; }
@@ -1168,10 +1173,18 @@ input {
 @media screen and (max-width: 1440px) {
   .hero:before {
     display: none; }
+  .hero-info {
+    padding: 0; }
+  .author:before {
+    top: -1px;
+    left: 0;
+    width: 100%; }
   .author .bg-title {
     display: none; }
   .author .title-section.hidden {
-    display: block; } }
+    display: block !important;
+    text-align: left;
+    margin-bottom: 20px; } }
 
 @media screen and (max-width: 1200px) {
   .author-video .title-section {
@@ -1216,6 +1229,95 @@ input {
     margin-bottom: 34px; } }
 
 @media screen and (max-width: 992px) {
+  .page-content {
+    padding-top: 70px; }
+  .header {
+    padding: 10px 0; }
+    .header.active {
+      background: #2F2D30;
+      height: 100vh; }
+      .header.active .container {
+        align-items: flex-start; }
+      .header.active .header-logo a {
+        color: #fff; }
+      .header.active .header-nav {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 120px;
+        text-align: center; }
+        .header.active .header-nav ul {
+          flex-direction: column;
+          align-items: center; }
+        .header.active .header-nav li {
+          margin: 0 0 20px; }
+        .header.active .header-nav a {
+          color: #fff;
+          font-size: 20px;
+          line-height: 24px; }
+    .header-logo a {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px; }
+    .header-nav {
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      position: absolute; }
+    .header-btn {
+      display: block;
+      position: relative;
+      width: 33px;
+      height: 33px;
+      border: 1px solid #2F2D30; }
+      .header-btn:before, .header-btn:after, .header-btn span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 20px;
+        height: 2px;
+        background: #000000;
+        transition: all ease 300ms; }
+      .header-btn:before, .header-btn:after {
+        content: ''; }
+      .header-btn:before {
+        top: 9px; }
+      .header-btn:after {
+        top: 21px; }
+      .header-btn span {
+        top: 15px; }
+      .header-btn.active {
+        border-color: #fff; }
+        .header-btn.active:before, .header-btn.active:after, .header-btn.active span {
+          background: #fff; }
+        .header-btn.active span {
+          opacity: 0; }
+        .header-btn.active:before {
+          top: calc(50% - 1px);
+          transform: rotate(45deg); }
+        .header-btn.active:after {
+          top: calc(50% - 1px);
+          transform: rotate(-45deg); }
+  .hero-title {
+    font-size: 32px;
+    line-height: 39px; }
+  .hero-text {
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 0; }
+  .hero-button {
+    padding-left: 0; }
+  .btn-secondary, .btn-primary, .btn-white {
+    min-width: 150px; }
+  .author h3.title-section {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px; }
   .author-item {
     width: calc(50% - 30px);
     margin-bottom: 30px; }
@@ -1413,6 +1515,17 @@ input {
       margin: 0 auto; } }
 
 @media screen and (max-width: 768px) {
+  .hero .container {
+    flex-direction: column-reverse; }
+  .hero-info {
+    width: 100%; }
+  .author-media {
+    width: 100%; }
+  .author-info {
+    width: 100%;
+    padding: 30px 0 0 0; }
+  .author-item {
+    width: calc(100% - 30px); }
   .contact {
     padding: 42px 0; }
     .contact .container {
@@ -1460,4 +1573,6 @@ input {
   .footer-nav {
     margin: 20px 0;
     max-width: 100%;
+    width: 100%; }
+  .hero-media {
     width: 100%; } }

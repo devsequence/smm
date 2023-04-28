@@ -507,11 +507,20 @@
   &-wrap{
     display: flex;
     flex-wrap: wrap;
+    //flex-flow: column wrap;
     justify-content: space-between;
+    //counter-reset: items;
+    //height: 580px;
   }
   &-item{
+
     width: calc(50% - 12px);
     margin-bottom: 9px;
+    //height: 58px;
+    //&:nth-of-type(2n) { float: right; }
+    //&:nth-of-type(2n+1) { float: left; }
+    // &:nth-of-type(2n) { order: 1; }
+    //&:nth-of-type(2n+2) { order: 2; }
     &__title{
       cursor: pointer;
       font-weight: 700;
@@ -555,6 +564,7 @@
       display: none;
     }
     &.open{
+      height: auto;
       .btn-accordion{
         &:after{
           opacity: 0;
