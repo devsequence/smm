@@ -1,4 +1,4 @@
-AOS.init({disable: 'mobile'});
+AOS.init();
 $('.header-btn').on('click', function (e) {
     var $this = $(this);
     $this.toggleClass('active');
