@@ -1,4 +1,13 @@
-AOS.init();
+if ($(window).width() < 960) {
+    AOS.init({
+        once: true, // whether animation should happen only once - while scrolling down
+
+    });
+}
+else {
+    AOS.init();
+}
+
 $('.header-btn').on('click', function (e) {
     var $this = $(this);
     $this.toggleClass('active');
